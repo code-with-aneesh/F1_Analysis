@@ -36,7 +36,7 @@ if option == "Front Row":
     result = (
         merged_df[(merged_df["position"] == 1) | (merged_df["position"] == 2)]["name"]
         .value_counts()
-        .sort_index()
+        .sort_values(ascending=False)
     )
     fig = px.bar(
         result,
@@ -48,7 +48,7 @@ if option == "Front Row":
         color_continuous_scale=selected_colorscale,
     )
 else:
-    result = merged_df[merged_df["position"] == 1]["name"].value_counts().sort_index()
+    result = merged_df[merged_df["position"] == 1]["name"].value_counts().sort_values(ascending=False)
     fig = px.bar(
         result,
         x=result.index,
@@ -83,13 +83,13 @@ if option == "Drivers":
         ["forename", "surname"]
     ]
     df["fullname"] = df["forename"] + " " + df["surname"]
-    df_val = df["fullname"].value_counts().head(25)
+    df_val = df["fullname"].value_counts().head(15)
     fig = px.bar(
         df_val,
         x=df_val.index,
         y=df_val.values,
         labels={"x": "Drivers", "y": "Number of Wins"},
-        title="Top 25 Drivers with Most Wins",
+        title="Top 15 Drivers with Most Wins",
         color=df_val.values,
         color_continuous_scale=selected_colorscale,
     )
