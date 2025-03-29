@@ -4,14 +4,14 @@ import plotly.graph_objects as go
 import plotly.express as px
 
 # Load the data
-drivers = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\drivers.csv")
-constructors = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\constructors.csv")
-races = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\races.csv")
-qualifying = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\qualifying.csv")
-lap_times = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\lap_times.csv")
-pit_stops = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\pit_stops.csv")
-circuits = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\circuits.csv")
-race_results = pd.read_csv(r"C:\Users\Aneesh Angane\F1_Analysis\data\results.csv")
+drivers = pd.read_csv(r"data\drivers.csv")
+constructors = pd.read_csv(r"data\constructors.csv")
+races = pd.read_csv(r"data\races.csv")
+qualifying = pd.read_csv(r"data\qualifying.csv")
+lap_times = pd.read_csv(r"data\lap_times.csv")
+pit_stops = pd.read_csv(r"data\pit_stops.csv")
+circuits = pd.read_csv(r"data\circuits.csv")
+race_results = pd.read_csv(r"data\results.csv")
 
 # Streamlit Dashboard Layout
 st.title("Formula 1 Data Dashboard")
