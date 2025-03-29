@@ -1,63 +1,52 @@
-# Formula 1 Data Analysis Dashboard
+# 🏎️ Formula 1 Data Analysis Dashboard
 
-This project is an interactive dashboard built using Streamlit to visualize and analyze Formula 1 data. The dashboard provides insights into various aspects of Formula 1 races, including constructors' performance in qualifying, top drivers and constructors, fastest and slowest circuits, average pit stop times, and lap times visualization.
+[![Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://f1analysis-apw4r9dgzqfwx8vxbpardu.streamlit.app)
+![Python](https://img.shields.io/badge/python-3.12+-blue.svg)
+![Pandas](https://img.shields.io/badge/pandas-2.0+-brightgreen.svg)
 
-## Features
+An interactive dashboard for analyzing Formula 1 historical data with driver/constructor performance metrics and race visualizations.
 
-- **Constructors in Qualifying**: Visualize the number of front row qualifications and pole positions by team.
-- **Top Drivers and Constructors**: Display the top 25 drivers with the most wins and the top 20 constructors with the most wins.
-- **Fastest and Slowest Circuits**: Identify the fastest and slowest circuits based on average lap times.
-- **Average Pit Stop Time**: Analyze the average pit stop time over the years.
-- **Lap Times Visualization**: Explore lap times and driver positions by lap for a specific race.
+## ✨ Features
+- Driver/constructor performance analytics
+- Circuit speed comparisons
+- Interactive race telemetry
+- Pit stop efficiency analysis
 
-## Installation
+## 🛠️ Tech Stack
+- **Frontend**: Streamlit
+- **Data Processing**: Pandas, NumPy
+- **Visualization**: Plotly, Matplotlib, Seaborn
 
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/F1_Analysis.git
-    cd F1_Analysis
-    ```
+## 📂 Data Structure
+```text
+data/
+├── drivers.csv
+├── constructors.csv
+├── races.csv
+├── results.csv
+├── qualifying.csv
+└── lap_times.csv
+```
 
-2. Install the required dependencies:
-    ```sh
-    pip install -r requirements.txt
-    ```
+## 🚀 Quick Start
+```bash
+# Clone repo
+git clone https://github.com/yourusername/f1-dashboard.git
+cd f1-dashboard
 
-3. Run the Streamlit app:
-    ```sh
-    streamlit run app.py
-    ```
+# Install dependencies
+pip install -r requirements.txt
 
-## Data
+# Launch app
+streamlit run app.py
+```
 
-The data used in this project is sourced from various CSV files located in the [data](http://_vscodecontentref_/0) directory. The following datasets are used:
+## 📊 Example Query
+```python
+# Get top 10 winning drivers
+winners = results[results['position'] == 1]
+top_drivers = winners['driverId'].value_counts().head(10)
+```
 
-- [drivers.csv](http://_vscodecontentref_/1): Information about drivers.
-- [constructors.csv](http://_vscodecontentref_/2): Information about constructors.
-- [races.csv](http://_vscodecontentref_/3): Information about races.
-- [qualifying.csv](http://_vscodecontentref_/4): Qualifying results.
-- [lap_times.csv](http://_vscodecontentref_/5): Lap times for each race.
-- [pit_stops.csv](http://_vscodecontentref_/6): Pit stop data.
-- [circuits.csv](http://_vscodecontentref_/7): Information about circuits.
-- `results.csv`: Race results.
-
-## Usage
-
-1. Launch the Streamlit app by running the command mentioned in the installation section.
-2. Use the sidebar to navigate between different sections of the dashboard.
-3. Explore the visualizations and insights provided in each section.
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](http://_vscodecontentref_/8) file for more details.
-
-## Acknowledgements
-
-- The data used in this project is sourced from [Ergast API](http://ergast.com/mrd/).
-- This project uses [Streamlit](https://streamlit.io/) for building the interactive dashboard.
-- Visualizations are created using [Plotly](https://plotly.com/).
-
-## Contact
-
-For any questions or feedback, please contact Aneesh Angane at [your-email@example.com].
-
+## 📜 License
+MIT License - See [LICENSE](LICENSE) for details.
